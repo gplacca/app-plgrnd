@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  infrastructure: one
+  date: MyString
+  start_time: MyString
+  duration: 1
+  price: 1
+
+two:
+  user: two
+  infrastructure: two
+  date: MyString
+  start_time: MyString
+  duration: 1
+  price: 1

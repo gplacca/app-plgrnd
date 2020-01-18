@@ -12,9 +12,12 @@
 
 ActiveRecord::Schema.define(version: 2020_01_18_163639) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "bookings", force: :cascade do |t|
-    t.integer "user_id"
-    t.integer "infrastructure_id"
+    t.bigint "user_id"
+    t.bigint "infrastructure_id"
     t.string "date"
     t.string "start_time"
     t.integer "duration"
@@ -34,7 +37,7 @@ ActiveRecord::Schema.define(version: 2020_01_18_163639) do
     t.string "sport"
     t.float "longitude"
     t.float "latitude"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_infrastructures_on_user_id"
@@ -54,4 +57,7 @@ ActiveRecord::Schema.define(version: 2020_01_18_163639) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "bookings", "infrastructures"
+  add_foreign_key "bookings", "users"
+  add_foreign_key "infrastructures", "users"
 end

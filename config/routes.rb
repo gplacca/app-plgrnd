@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   root to: 'pages#home'
   resources :infrastructures
   get 'joke' => 'pages#joke', as: :joke
+
 end

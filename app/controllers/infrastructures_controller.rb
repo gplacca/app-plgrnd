@@ -1,4 +1,5 @@
 class InfrastructuresController < ApplicationController
+
   def index
     @infrastructures = Infrastructure.all
   end
